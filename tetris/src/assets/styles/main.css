@@ -1,0 +1,19 @@
+.header {
+  padding: 20px 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.playfield {
+  width: 300px;
+  height: 600px;
+  background-color: rgb(187, 152, 152);
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+}
