@@ -1,12 +1,22 @@
 export default class Game {
+  static points = {
+    '1': 40,
+    '2': 100,
+    '3': 300,
+    '4': 1200
+  };
+
   score = 0;
-  lines = 0;
-  level = 0;
+  lines = 19;
   playfield = this.createPlayfield();
   // активная фигура
   activePiece = this.createPiece();
   // следующая фигура
   nextPiece = this.createPiece();
+
+  get level() {
+    return Math.floor(this.lines * 0.1);
+  }
 
   // получить состояние
   getState() {
@@ -144,6 +154,8 @@ export default class Game {
     if (this.hasCollision()) {
       this.activePiece.y -= 1;
       this.lockPiece();
+      const clearedLines = this.clearLines();
+      this.updateScore(clearedLines);
       this.updatePieces();
     }
   };
@@ -214,6 +226,61 @@ export default class Game {
 
         }
       }
+    }
+  }
+
+  // удаление заполненной линии
+  clearLines() {
+    // количество рядов
+    const rows = 20;
+    // количество колонок
+    const columns = 10;
+    // ряды для удаления
+    const lines = [];
+
+    // начинаем с поледнего ряда и проверяем сколько заполнено блоков
+    for (let y = rows - 1; y >= 0; y--){
+      // количество блоков
+      let numberOfBlocks = 0;
+      // перебираем линию 
+      for (let x = 0; x < columns; x++) {
+        // если блок существует
+        if (this.playfield[y][x] !== 0) {
+          // добавляем его в переменную
+          numberOfBlocks += 1;
+        }
+      }
+        
+      // если блоков в линию нет, то выходим из цикла, так как блоков выше точно нет
+      if (numberOfBlocks === 0) {
+        break;
+      // если блоков меньше, чем колонок, то переходим на следующую итерацию
+      } else if (numberOfBlocks < columns) {
+        continue;
+      // и если количество блоков равно количеству колонок, 
+      // то добавляем индекс этой линии в наш массив для удаления
+      } else if (numberOfBlocks === columns) {
+        lines.unshift(y);
+      }
+    }
+
+    // перебираем массив с индексами линий на удаление
+    for (const index of lines) {
+      // удаляем линию из игрового поля
+      this.playfield.splice(index, 1);
+      // добавляем сверху новый ряд 
+      this.playfield.unshift(new Array(columns).fill(0));
+    }
+
+    return lines.length;
+  }
+
+  // обновление счёта, аргументом принимает количество удаленных линий
+  updateScore(clearedLines) {
+    console.log(this.level);
+    if (clearedLines > 0) {
+      this.score += Game.points[clearedLines] * (this.level + 1);
+      this.lines += clearedLines;
     }
   }
 
