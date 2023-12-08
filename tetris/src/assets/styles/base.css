@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: white;
+  background: url('../img/tetris-bg.jpg');
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
