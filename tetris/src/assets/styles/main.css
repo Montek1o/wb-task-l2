@@ -2,12 +2,23 @@
   padding: 20px 0;
 }
 
+.main {
+  padding: 20px 0;
+}
+
 .playfield canvas {
   display: block;
   margin: 0 auto;
+  background-color: black;
+  border: 4px solid white;
+  box-shadow: 0 0 20px black;
 }
 
 .footer {
   padding: 20px 0;
   text-align: center;
+}
+
+.git {
+  width: 60px;
 }

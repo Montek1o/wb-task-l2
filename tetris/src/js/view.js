@@ -7,7 +7,7 @@ export default class View {
     '5': 'blue',
     '6': 'purple',
     '7': 'aqua',
-    '8': 'black'
+    '8': 'white'
   };
 
   constructor(element, width, height, rows, columns) {
@@ -46,7 +46,7 @@ export default class View {
   }
 
   renderStartScreen() {
-    this.context.fillStyle = 'black';
+    this.context.fillStyle = 'white';
     this.context.font = '18px "Courier New"';
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
@@ -57,7 +57,7 @@ export default class View {
     this.context.fillStyle = 'rgba(0,0,0,0.2)';
     this.context.fillRect(0, 0, this.width, this.height);
 
-    this.context.fillStyle = 'black';
+    this.context.fillStyle = 'white';
     this.context.font = '18px "Courier New"';
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
@@ -67,7 +67,7 @@ export default class View {
   renderEndScreen({ score }) {
     this.clearScreen();
 
-    this.context.fillStyle = 'black';
+    this.context.fillStyle = 'white';
     this.context.font = '18px "Courier New"';
     this.context.textAlign = 'center';
     this.context.textBaseline = 'middle';
@@ -99,7 +99,7 @@ export default class View {
       }
     }
 
-    this.context.strokeStyle = 'black';
+    this.context.strokeStyle = 'white';
     this.context.lineWidth = this.playfieldBorderWidth;
     this.context.strokeRect(0, 0, this.playfieldWidth, this.playfieldHeight);
   }
@@ -107,7 +107,7 @@ export default class View {
   renderPanel({ level, score, lines, nextPiece }) {
     this.context.textAlign = 'start';
     this.context.textBaseline = 'top';
-    this.context.fillStyle = 'black';
+    this.context.fillStyle = 'white';
     this.context.font = '16px "Courier New"';
 
     this.context.fillText(`Score: ${score}`, this.panelX, this.panelY + 0);
@@ -134,7 +134,7 @@ export default class View {
 
   renderBlock(x, y, width, height, color) {
     this.context.fillStyle = color;
-    this.context.strokeStyle = 'white';
+    this.context.strokeStyle = 'black';
     this.context.lineWidth = 2;
 
     this.context.fillRect(x, y, width, height, color);

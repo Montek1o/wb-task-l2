@@ -6,10 +6,15 @@
 
 body {
   font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: white;
+  background: url('../img/tetris-bg.jpg');
+  background-size: cover;
 }
 
 h1 {
   text-align: center;
+  font-size: 42px;
 }
 
 h2 {
