@@ -10,6 +10,7 @@ body {
   color: white;
   background: url('../img/tetris-bg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -24,4 +25,10 @@ h2 {
 .wrapper {
   max-width: 700px;
   margin: 0 auto;
+}
+
+@media (max-width: 490px) {
+  body {
+    background-attachment: fixed;
+  }
 }

@@ -22,3 +22,13 @@
 .git {
   width: 60px;
 }
+
+@media (max-width: 490px) {
+  .playfield {
+    height: 590px;
+  }
+
+  .playfield canvas {
+    transform: scale(0.8);
+  }
+}
