@@ -115,4 +115,8 @@
   .playfield {
     margin-top: 40px;
   }
+  
+  .buttons__container {
+    padding-bottom: 40px;
+  }
 }
