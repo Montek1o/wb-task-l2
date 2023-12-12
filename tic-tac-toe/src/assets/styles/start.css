@@ -1,0 +1,33 @@
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-screen__img {
+  margin: 40px 0;
+  width: 715px;
+  height: 482px;
+  background: url('../img/bg-start.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.start-screen__title {
+  letter-spacing: -0.4px;
+  margin-bottom: 45px;
+}
+
+@media (max-width: 832px) {
+  .start-screen__img {
+    width: 500px;
+    height: 337px;
+  }
+}
+
+@media (max-width: 590px) {
+  .start-screen__img {
+    width: 401px;
+    height: 270px;
+  }
+}

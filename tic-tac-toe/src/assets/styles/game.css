@@ -1,0 +1,118 @@
+.game-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.turn {
+  width: 222px;
+  height: 62px;
+  margin-top: 60px;
+}
+
+.turn__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.turn__count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  font-size: 40px;
+  letter-spacing: -0.4px;
+}
+
+.turn__select {
+  margin-top: 8px;
+}
+
+.select {
+  height: 6px;
+  width: 36px;
+  border-radius: 100px;
+  background-color: rgba(252, 244, 226, 1);
+  transition: all .3s ease;
+}
+
+.select-circle {
+  transform: translateX(186px );
+}
+
+.count__cross-win {
+  color: rgba(255, 177, 0, 1);
+}
+
+.count__divider {
+  width: 2px;
+  height: 28px;
+  border-radius: 100px;
+  background-color: rgba(252, 244, 226, 1);
+}
+
+.count__circle-win {
+  color: rgba(235, 255, 0, 1);
+}
+
+.playfield {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 88px;
+  width: 399px;
+  height: 399px;
+  background-image: url('../img/bg-playfield.png');
+}
+
+.playfield__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 133px;
+  height: 133px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.color-win {
+  background-color: rgba(0, 255, 0, 0.129);
+}
+
+.winner {
+  display: none;
+  letter-spacing: -0.4px;
+  margin-top: 60px;
+  height: 62px;
+}
+
+.buttons__container {
+  display: none;
+  column-gap: 20px;
+  margin-top: 45px; 
+}
+
+.bird-one {
+  position: absolute;
+  top: 200px;
+  left: 160px;
+}
+
+.bird-two {
+  position: absolute;
+  bottom: 200px;
+  right: 160px;
+}
+
+@media (max-width: 1105px) {
+  .birds__container {
+    display: none;
+  }
+}
+
+@media (max-width: 590px) {
+  .playfield {
+    margin-top: 40px;
+  }
+}

@@ -3,8 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/assets/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <title>Tic tac toe</title>
 </head>
 <body>
+  <header class="header">
+    <h1>Tic Tac Toe</h1>
+  </header>
+  <main class="main">
+    <div class="start-screen">
+      <div class="start-screen__img"></div>
+      <h2 class="start-screen__title">Привет! Давай выясним кто круче?</h2>
+      <div class="start-screen__button button">Начать игру</div>
+    </div>
+    <div class="game-screen">
+      <div class="turn">
+        <div class="turn__container">
+          <img class="turn__img" src="./src/assets/img/cross-count.svg" alt="cross">
+          <div class="turn__count">
+            <span class="count__cross-win">0</span>
+            <div class="count__divider"></div>
+            <span class="count__circle-win">0</span>
+          </div>
+          <img class="turn__img" src="./src/assets/img/circle-count.svg" alt="circle">
+        </div>
+        <div class="turn__select">
+          <div class="select"></div>
+        </div>
+      </div>
+      <h2 class="winner"></h2>
+      <div class="playfield">
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+        <div class="playfield__block"></div>
+      </div>
+      <div class="buttons__container">
+        <div class="one-more-game-button button">Играть ещё</div>
+        <div class="new-game-button button">Начать заново</div>
+      </div>
+      <div class="birds__container">
+        <img class="bird-one" src="./src/assets/img/bird-1.png" alt="bird">
+        <img class="bird-two" src="./src/assets/img/bird-2.png" alt="bird">
+      </div>
+    </div>
+  </main>
+  <script src="./src/js/main.js" type="module"></script>
 </body>
 </html>
