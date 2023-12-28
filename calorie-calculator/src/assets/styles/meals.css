@@ -1,0 +1,229 @@
+.meals {
+  display: none;
+}
+
+.meals__diagram {
+  position: relative;
+  padding: 19px 0;
+  margin: 40px 0 80px;
+  border-radius: 24px;
+  border: 1px solid rgba(253, 253, 253, 0.30);
+  background: rgba(253, 253, 253, 0.40);
+  box-shadow: -20px 20px 100px 0px rgba(0, 0, 0, 0.20);
+}
+
+.diagram__progress {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 54px;
+  width: 3%;
+  border-radius: 20px;
+  background-color: rgba(253, 253, 253, 1);
+  z-index: -1;
+  transition: all .3s ease;
+}
+
+.diagram__info {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+  color: rgba(0, 31, 138, 1);
+}
+
+.meals__add-meal {
+  width: 300px;
+}
+
+.meals__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  margin-top: 60px;
+}
+
+.meals__item {
+  border-radius: 24px;
+  border: 1px solid rgba(253, 253, 253, 0.30);
+  background: rgba(253, 253, 253, 0.40);
+  box-shadow: -20px 20px 100px 0px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(50px);
+  transition: all .3s ease;
+}
+
+.meal__header {
+  padding: 31px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.meal__title {
+  display: flex;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.meal__delete {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.meal__arrow {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.meal__arrow-close {
+  transform: rotate(-180deg);
+}
+
+.meal__content {
+  padding: 0 31px 31px;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+.meal__products {
+  margin: 28px 0 60px;
+}
+
+.products__names {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  padding-bottom: 8px;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(253, 253, 253, 0.65);
+}
+
+.names__point {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.names__point:first-child {
+  justify-content: flex-start;
+}
+
+.names__point:last-child {
+  padding-right: 36px;
+}
+
+.names__sort-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../img/sort-icon.svg');
+  margin-right: 4px;
+}
+
+.names__sort-icon-active {
+  background: url('../img/sort-icon-active.svg');
+}
+
+.names__sort-kcal, .names__filter-names {
+  cursor: pointer;
+}
+
+.product {
+  display: flex;
+  border-top: 1px solid rgba(253, 253, 253, 0.4);
+}
+
+.product__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.product__columns p {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.product__columns p:first-child {
+  justify-content: flex-start;
+}
+
+.product__delete {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.products__total {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 44px 8px 8px;
+  border-top: 2px solid rgba(253, 253, 253, 1);
+}
+
+.add-product__inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 40px;
+}
+
+.add-product__button {
+  margin-top: 40px;
+}
+
+@media (max-width: 870px) {
+  .meals__diagram {
+    margin: 0px 0 40px;
+  }
+
+  .diagram__info {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .meals__list {
+    margin-top: 40px;
+    row-gap: 30px;
+  }
+
+  .meals__item {
+    border-radius: 20px;
+  }
+
+  .meal__header {
+    padding: 20px 15px;
+  }
+
+  .meal__title {
+    font-size: 20px;
+  }
+
+  .meal__content {
+    padding: 0 15px 15px;
+  }
+
+  .meal__products {
+    margin: 20px 0;
+  }
+
+  .products__names {
+    font-size: 12px;
+  }
+
+  .add-product__inputs {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .names__sort-icon {
+    display: none;
+  }
+}
+
+

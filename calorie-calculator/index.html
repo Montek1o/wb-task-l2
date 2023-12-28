@@ -3,8 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/assets/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <title>Calorie calculator</title>
 </head>
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="header__title">Калькулятор калорий</h1>
+      <p class="header__subtitle">Расчитайте онлайн норму калорий, чтобы держать свой вес в норме</p>
+      <nav class="header__navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">Дневная норма калорий</li>
+          <li class="navigation__item">Приёмы пищи</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="profile">
+        <form class="profile__form">
+          <div class="form__gender">
+            <h3 class="form__title">Пол</h3>
+            <div class="gender__toggle">
+              <div class="gender__item">
+                <input class="gender__input" id="gender-man" type="radio" name="gender" value="man" checked>
+                <label class="gender__label" for="gender-man">Мужчина</label>
+              </div>
+              <div class="gender__item">
+                <input class="gender__input" id="gender-woman" type="radio" name="gender" value="woman">
+                <label class="gender__label" for="gender-woman">Женщина</label>
+              </div> 
+            </div>
+          </div>
+          <div class="form__parameters">
+            <label>
+              <h3 class="form__title">Возраст</h3>
+              <input class="parameters__input input age" type="text" placeholder="0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,3}$/.test(this.value));">
+            </labeL>
+            <label>
+              <h3 class="form__title">Рост(см)</h3>
+              <input class="parameters__input input height" type="text" placeholder="0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,3}$/.test(this.value));">
+            </labeL>
+            <label>
+              <h3 class="form__title">Вес(кг)</h3>
+              <input class="parameters__input input weight" type="text" placeholder="0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,3}$/.test(this.value));">
+            </labeL>
+          </div>
+          <div class="form__activity">
+            <h3 class="activity__title">Физическая активность</h3>
+            <div class="activity__item">
+              <input class="activity__input" id="activity-min" type="radio" name="activity" value="1.2" checked>
+              <label class="activity__label" for="activity-min">
+                <p>Минимальная</p>
+              </label>
+              <p class="activity__clarification">Сидячая работа, нет физических нагрузок</p>
+            </div>
+            <div class="activity__item">
+              <input class="activity__input" id="activity-mid" type="radio" name="activity" value="1.375">
+              <label class="activity__label" for="activity-mid">
+                <p>Средняя</p>
+              </label>
+              <p class="activity__clarification">2-3 тренировки в неделю, работа по дому</p>
+            </div>
+            <div class="activity__item">
+              <input class="activity__input" id="activity-max" type="radio" name="activity" value="1.55">
+              <label class="activity__label" for="activity-max">
+                <p>Высокая</p>
+              </label>
+              <p class="activity__clarification">5-7 тренировок в неделю, физическая работа</p>
+            </div>
+          </div>
+          <div class="form__button button">Раcсчитать калории</div>
+        </form>
+        <div class="profile__sum-calories">
+          <p class="sum-calories__title">Ваша норма калорий:</p>
+          <p class="sum-calories__count"><span>0</span> ккал</p>
+        </div>
+      </div>
+      <div class="meals">
+        <div class="meals__diagram">
+          <p class="diagram__info"><span class="diagram__fact"></span> кКал / <span class="diagram__limit">4500</span> кКал</p>
+          <div class="diagram__progress"></div>
+        </div>
+        <div class="meals__add-meal button">Добавить приём пищи</div>
+        <div class="meals__list">
+        </div>
+        <div class="meals__popup">
+          <div class="popup__container">
+            <img class="popup__close" src="./src/assets/img/close-popup.svg" alt="close-popup">
+            <input class="popup__input input" type="text" placeholder="Введите название приёма пищи">
+            <div class="popup__add-button button">Добавить</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./src/js/main.js" type="module"></script>
 </body>
 </html>

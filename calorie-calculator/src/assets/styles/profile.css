@@ -1,0 +1,190 @@
+.profile {
+  display: flex;
+  column-gap: 60px;
+  padding: 8px;
+  border: 1px solid rgba(253, 253, 253, 0.3);
+  border-radius: 24px;
+  background-color: rgba(253, 253, 253, 0.4);
+  box-shadow: -20px 20px 100px 0px rgba(0, 0, 0, 0.20);
+}
+
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px; 
+  padding: 32px;
+}
+
+.form__title {
+  font-size: 15px;
+  font-weight: 400; 
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.gender__toggle {
+  display: flex;
+  border-radius: 8px;
+  border: 2px solid rgba(253, 253, 253, 1);
+}
+
+.gender__item {
+  width: 100%;
+}
+
+.gender__label {
+  display: block;
+  padding: 10px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.gender__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.gender__input:checked + .gender__label {
+  color: rgba(0, 31, 138, 1);
+  background-color: rgba(253, 253, 253, 1);
+}
+
+.form__parameters {
+  display: flex;
+  align-items: center;
+  column-gap: 92px;
+}
+
+.parameters__input {
+  width: 112px;
+  border-radius: 8px;
+}
+
+.activity__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.activity__item {
+  margin-top: 16px;
+}
+
+.activity__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.activity__label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  column-gap: 12px;
+  cursor: pointer;
+}
+
+.activity__input + .activity__label::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/radio-unchecked.svg');
+}
+
+.activity__input:checked + .activity__label {
+  color: rgba(0, 31, 138, 1);
+}
+
+.activity__input:checked + .activity__label::before {
+  background-image: url('../img/radio-checked.svg');
+}
+
+.activity__clarification {
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(253, 253, 253, 0.65);
+  margin-top: 1px;
+  margin-left: 32px;
+}
+
+.profile__sum-calories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  width: 100%;
+  background: rgba(253, 253, 253, 0.40);
+  border: 1px solid rgba(253, 253, 253, 0.30);
+  border-radius: 16px;
+}
+
+.sum-calories__count {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+@keyframes inputError {
+  0% {
+    background: rgba(253, 253, 253, 0.40);
+    border-color: rgba(253, 253, 253, 0.30);
+  }
+
+  50% {
+    background: rgb(216, 120, 120);
+    border-color: rgb(216, 120, 120);
+  }
+
+  100% {
+    background: rgba(253, 253, 253, 0.40);
+    border-color: rgba(253, 253, 253, 0.30);
+  }
+}
+
+@media (max-width: 915px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__sum-calories {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .form__parameters {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .form__parameters label {
+    width: 100%;
+  }
+
+  .parameters__input {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .profile__form {
+    padding: 8px;
+  }
+
+  .form__button {
+    margin-bottom: 30px;
+  }
+
+  .profile__sum-calories {
+    padding: 40px 20px;
+  }
+
+  .sum-calories__count {
+    font-size: 32px;
+    line-height: 22px;
+  }
+}
+
