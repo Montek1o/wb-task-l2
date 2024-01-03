@@ -23,7 +23,6 @@ export default function game() {
   let attempts = 0;
   
   function submit() {
-    console.log(randomNumber);
     let userNumber = input.value;
 
     if (userNumber > randomNumber) {
