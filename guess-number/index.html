@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/assets/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Игра «Угадай число»</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">Игра «Угадай число»</h1>
+      <div class="header__buttons">
+        <img class="buttons__restart" src="./src/assets/img/restart.svg" alt="restart">
+        <img class="buttons__settings" src="./src/assets/img/settings.svg" alt="settings">
+      </div>
+    </header>
+    <main>
+      <div class="play">
+        <h2 class="play__title">Загадано число от <span class="min">1</span> до <span class="max">100</span>, ваша задача его отгадать</h2>
+        <form class="play__form">
+          <input class="form__input" type="text" placeholder="Введите ваше число" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value));">
+          <button class="form__button">Отправить</button>
+        </form>
+      </div>
+      <div class="info">
+        <div class="info__hint">
+          <p class="hint__text">Подсказка: <span>Сначала попробуйте отгадать</span></p>
+        </div>
+        <div class="info__try">
+          <p class="try__text">Число попыток: <span>0</span></p>
+        </div>
+        <div class="info__result">
+          <p class="result__text">Результат: <span>Пока неизвестен</span></p>
+        </div>
+      </div>
+      <div class="settings">
+        <h2 class="settings__title">Задайте диапазон чисел</h2>
+        <form class="settings__form">
+          <label>От:
+            <input class="settings__input settings__input__min" type="text" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value));">
+          </label>
+          <label>До:
+            <input class="settings__input settings__input__max" type="text" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value));">
+          </label>
+          <div class="settings__buttons">
+            <div class="settings__button settings__button__update">Обновить</div>
+            <div class="settings__button settings__button__back">Назад</div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+  <div class="notification">
+    <p></p>
+  </div>
+  <script src="./src/js/main.js" type="module"></script>
+</body>
+</html>
