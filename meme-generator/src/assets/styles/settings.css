@@ -1,0 +1,69 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 30px;
+  background: rgb(233, 222, 209);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(118, 118, 118);
+}
+
+.settings span {
+  white-space: nowrap;
+}
+
+.settings__step {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 14px;
+  border: 1px solid rgb(124, 124, 124);
+  border-radius: 10px;
+}
+
+.settings__background {
+  animation-duration: .5s;
+}
+
+.settings__label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.element__container {
+  display: flex;
+  column-gap: 10px;
+}
+
+.element__buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.save-meme__button {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+@keyframes error {
+  0% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: rgb(255, 136, 136);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 420px) {
+  .element__container {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
