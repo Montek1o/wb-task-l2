@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/assets/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Генератор мемов</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="header__title">Генератор мемов</h1>
+    </header>
+    <main class="main">
+      <section class="settings">
+        <div class="settings__background settings__step">
+          <h3 class="settings__title">1. Создайте фон</h3>
+          <label class="background__file settings__label">
+            <span>Выберите изображение:</span>
+            <input class="file__input" type="file">
+          </label>
+        </div>
+        <div class="settings__element settings__step">
+          <h3 class="settings__title">2. Добавьте элементы</h3>
+          <label class="element__text settings__label">
+            <span>Введите текст элемента:</span>
+            <input class="text__input input" type="text">
+          </label>
+          <div class="element__container">
+            <label class="element__font-size settings__label">
+              <span>Размер текста:</span>
+              <input class="font-size__input input" type="text" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value));">
+            </label>
+            <label class="element__font-color settings__label">
+              <span>Цвет текста:</span>
+              <input class="font-color__input input-color" type="color">
+            </label>
+          </div>
+          <div class="element__container">
+            <label class="element__stroke-width settings__label">
+              <span>Толщина обводки:</span>
+              <input class="stroke-width__input input" type="text" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,10}$/.test(this.value));">
+            </label>
+            <label class="element__stroke-color settings__label">
+              <span>Цвет обводки:</span>
+              <input class="stroke-color__input input-color" type="color">
+            </label>
+          </div>
+          <div class="element__buttons">
+            <div class="buttons__add-element button">Добавить элемент</div>
+          </div>
+        </div>
+        <div class="settings__save-meme settings__step">
+          <h3 class="settings__title">3. Сохраните изображение</h3>
+          <a class="save-meme__button button" href="#">Сохранить мем</a>
+        </div>
+      </section>
+      <section class="meme">
+        <canvas class="meme__canvas"></canvas>
+      </section>
+    </main>
+  </div>
+  <script src="./src/js/main.js" type="module"></script>
+</body>
+</html>
